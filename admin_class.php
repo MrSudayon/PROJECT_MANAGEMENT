@@ -23,7 +23,7 @@ Class Action {
 				if($key != 'password' && !is_numeric($key))
 					$_SESSION['login_'.$key] = $value;
 			}
-				return 1;
+			return 1;
 		}else{
 			return 2;
 		}
