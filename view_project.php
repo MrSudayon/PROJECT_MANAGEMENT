@@ -263,6 +263,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 						
 							<form action="" class="productivity-reply">
 								<div class="comment">
+									<small>Comments:</small><br>
 									<?php
 										$comments = $conn->query("SELECT r.*,concat(u.firstname,' ',u.lastname) as uname,u.avatar,r.reply as reply 
 																FROM user_productivity_replies r 
@@ -272,7 +273,6 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 																order by unix_timestamp(r.date) desc");
 										while($comment = $comments->fetch_assoc()):
 									?>
-									<small>Comments:</small><br>
 									<small>
 										<img class="img-circle" style="width: 20px; height: 20px;" src="assets/uploads/<?php echo $comment['avatar'] ?>" alt="user image">
 										<span class="username">
